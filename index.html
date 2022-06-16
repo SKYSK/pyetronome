@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/pyetoro.js"></script>
+    <link rel="stylesheet" media="(min-width: 640px)" href="./css/pyetoro_pc.css" />
+</head>
+
+<body>
+    <div class="metronome-container">
+        <div class="image-container">
+            <img class="pyai" id="pyai1" src="./assets/images/koitochang.png" />
+            <img class="pyai" id="pyai2" src="./assets/images/koitochang.png" />
+            <img class="pyai" id="pyai3" src="./assets/images/koitochang.png" />
+            <img class="pyai" id="pyai4" src="./assets/images/koitochang.png" />
+        </div>
+        <div class="bpm-container">
+            <label>BぴぇM</label>
+            <label class="bpm-text" id="bpm-text"></label>
+            <button class="bpm-btn-mns" id="bpm-btn-mns" onclick="decreaseBpm()">-</button>
+            <input type="range" class="bpm-slider" id="bpm-slider" min="40" max="1111" step="1" />
+            <button class="bpm-btn-pls" id="bpm-btn-mns" onclick="increaseBpm()">+</button>
+        </div>
+        <div class="metronome-switch-container">
+            <button class="metronome-switch-btn" onclick="start()">Start</button>
+            <button class="metronome-switch-btn" onclick="stop()">Stop</button>
+        </div>
+    </div>
+</body>
+
+</html>

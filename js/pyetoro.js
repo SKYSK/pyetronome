@@ -7,22 +7,21 @@ let bpmTextElement = null;
 let currentImage = 4;
 let active = false; 
 let intervalId = 0;
-let bpm = 60
+let bpm = 60;
 
 const audio = new Audio(".\\assets\\sounds\\pye1.wav")
 const sleep = ms => new Promise(resolve =>
     setTimeout(resolve, ms)
-  );
+    );
 
 const start = async () => {
     active = true;
-    currentImage = 4
+    currentImage = 4;
     while (active) {
-        await sleep(60000 / bpm).then(() =>{
-            audio.currentTime = 0;
-            audio.play()
-        });
-        switchImage()
+        audio.currentTime = 0;
+        audio.play();
+        switchImage();
+        await sleep(60000 / bpm);
     }
 }
 
@@ -74,7 +73,7 @@ function increaseBpm(){
 function decreaseBpm(){
     bpm--;
     bpmSliderElement.value = bpm;
-    bpmTextElement.innerText = bpm
+    bpmTextElement.innerText = bpm;
 }
 
 window.addEventListener("load", ()=> {
@@ -88,6 +87,6 @@ window.addEventListener("load", ()=> {
     bpmSliderElement.value = bpm;
     bpmSliderElement.addEventListener("input", (e) => {
         bpm = Number(e.target.value);
-        bpmTextElement.innerText = Number(e.target.value);;
+        bpmTextElement.innerText = Number(e.target.value);
     });
 });
